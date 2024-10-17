@@ -99,7 +99,7 @@ body: Center(
           tasksReference.doc("A00001").set(
             {
               "title": "Ir al consierto",
-              "description": "Este fin de semana debemos ir a tomar ",
+              "description": "Este fin de semana debemos ir a trabajar ",
             },
           ).catchError((error){
               print(error);
