@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "881519180730",
+    "project_id": "timeee-e88d8",
+    "storage_bucket": "timeee-e88d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881519180730:android:9e3c2fc9f8f0847828fb83",
+        "android_client_info": {
+          "package_name": "com.example.timeee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkNs_IbBUIdMAntnUfrEjloxpsvwcZkzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
