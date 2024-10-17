@@ -1,6 +1,5 @@
 
-// ignore: depend_on_referenced_packages
-import 'package:timee/lib/ui/general/colors.dart';
+import 'package:timeee/ui/general/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

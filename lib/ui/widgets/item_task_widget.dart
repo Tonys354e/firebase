@@ -1,8 +1,8 @@
 
-import 'package:firetask/models/task_model.dart';
-import 'package:firetask/services/my_service_firestore.dart';
-import 'package:firetask/ui/widgets/item_category_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:timeee/models/task_model.dart';
+import 'package:timeee/services/my_service_firestore.dart';
+import 'package:timeee/ui/widgets/item_category_widget.dart';
 import '../general/colors.dart';
 import 'general_widgets.dart';
 

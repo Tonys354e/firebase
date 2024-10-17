@@ -1,10 +1,43 @@
-import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-Color kBrandPrimaryColor = const Color(0xff2C3550);
-Color kBrandSecondaryColor = const Color(0xffF4F6FF);
+import 'package:timeee/models/task_model.dart';
+import 'package:timeee/models/user_model.dart';
 
-Map<String, Color> categoryColor = {
-  "Personal": Color(0xff3E80FF),
-  "Trabajo": Color(0xffEF476F),
-  "Otro": Color(0xffFFC300),
-};
+class MyServiceFirestore {
+  String collection;
+
+  MyServiceFirestore({required this.collection});
+
+  late final CollectionReference _collectionReference =
+  FirebaseFirestore.instance.collection(collection);
+
+  Future<String> addTask(TaskModel model) async {
+    DocumentReference documentReference =
+    await _collectionReference.add(model.toJson());
+    String id = documentReference.id;
+    return id;
+  }
+
+  Future<void> finishedTask(String taskId) async {
+    await _collectionReference.doc(taskId).update(
+      {
+        "status": false,
+      },
+    );
+  }
+
+  Future<String> addUser(UserModel userModel) async{
+    DocumentReference documentReference =  await _collectionReference.add(userModel.toJson());
+    return documentReference.id;
+  }
+
+  Future<bool> existUser(String email) async {
+    QuerySnapshot collection = await _collectionReference.where("email", isEqualTo: email).get();
+    if(collection.docs.isNotEmpty){
+      return true;
+    }
+    return false;
+  }
+
+
+}
